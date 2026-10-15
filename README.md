@@ -1,4 +1,4 @@
-# ShopKart — Full-Stack E-Commerce Web Application
+# ShopKart - Full-Stack E-Commerce Web Application
 
 ShopKart is a modern, responsive, full-stack e-commerce web platform engineered for seamless online shopping, secure customer authentication, dynamic inventory browsing, persistent cart and wishlist management, and verified online payments via Razorpay (Test Mode).
 
