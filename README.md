@@ -395,7 +395,8 @@ http://localhost:5001
 | `CLOUDINARY_CLOUD_NAME`| Backend | `backend/.env` | Cloudinary cloud identifier (used by migration script). | Optional |
 | `CLOUDINARY_API_KEY` | Backend | `backend/.env` | Cloudinary API Key. | Optional |
 | `CLOUDINARY_API_SECRET`| Backend | `backend/.env` | Cloudinary API Secret. **Keep server-side!** | Optional |
-| `VITE_API_URL` | Frontend| `frontend/.env` | Backend API base URL (defaults to `http://localhost:5001`). | Optional |
+| `CLIENT_URL` | Backend | `backend/.env` | Optional additional frontend origin for CORS (e.g. `https://shopkart-weld.vercel.app`). | Optional |
+| `VITE_API_URL` | Frontend| `frontend/.env` | Backend API base URL (`http://localhost:5001` for local dev, `/api` for Vercel production). | Optional |
 
 ---
 
@@ -495,7 +496,7 @@ node -c controllers/order.controller.js
 
 ## Limitations & Future Roadmap
 
-- **Deployment Scope**: Currently configured for local development on `http://localhost:5173` and `http://localhost:5001`.
+- **Deployment Scope**: Production frontend is deployed on Vercel at `https://shopkart-weld.vercel.app` (using `/api` same-origin proxy rewrites), with the Express backend deployed at `https://shopkart-api-phi.vercel.app`. Local development runs on `http://localhost:5173` and `http://localhost:5001`.
 - **Razorpay Webhooks**: In production, server-to-server Razorpay webhooks can be added to handle dropped internet connections or delayed bank settlement webhooks.
 - **Admin Dashboard**: Future versions can introduce a dedicated administrative panel for product inventory uploads and order fulfillment tracking.
 - **Product Reviews**: Customer star ratings and verified review submissions.
